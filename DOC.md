@@ -92,7 +92,7 @@ Edite o arquivo `questions.json` seguindo o formato:
   * ✅ Firefox 55+
   * ✅ Safari 12+
   * ✅ Edge 79+
-• ✅ Dispositivos móveis (iOS/Android)
+  * ✅ Dispositivos móveis (iOS/Android)
 
 #### Próximos Passos (Sugestões)
 Adicionar mais categorias de perguntas
