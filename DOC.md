@@ -4,29 +4,29 @@ Este é um protótipo de simulado de perguntas interativo desenvolvido com HTML,
 
 ### Características do Simulado
 
-• Formato: Múltipla escolha com 4 opções por pergunta 
-• Quantidade: 5 perguntas por simulado
-• Tema: Conhecimentos Gerais
-• Pontuação: 1 ponto por acerto, sem penalidade por erro
-• Feedback: Resultado completo ao final com revisão das respostas
+  * Formato: Múltipla escolha com 4 opções por pergunta
+  * Quantidade: 5 perguntas por simulado
+  * Tema: Conhecimentos Gerais
+  * Pontuação: 1 ponto por acerto, sem penalidade por erro
+  * Feedback: Resultado completo ao final com revisão das respostas
 
-Funcionalidades
+#### Funcionalidades
 
-✅ **Interface Responsiva**: Adaptada para desktop e mobile
-✅ **Barra de Progresso**: Mostra o progresso durante o simulado
-✅ **Contador de Perguntas**: Indica a pergunta atual (ex: "3 de 5")
-✅ **Seleção Visual**: Destaque da opção selecionada
-✅ **Navegação Intuitiva**: Botão habilitado apenas após seleção
-✅ **Resultado Detalhado**: Pontuação percentual e revisão completa
-✅ **Função Reiniciar**: Permite refazer o simulado
+✅ **Interface Responsiva**: Adaptada para desktop e mobile <br>
+✅ **Barra de Progresso**: Mostra o progresso durante o simulado <br>
+✅ **Contador de Perguntas**: Indica a pergunta atual (ex: "3 de 5") <br>
+✅ **Seleção Visual**: Destaque da opção selecionada <br>
+✅ **Navegação Intuitiva**: Botão habilitado apenas após seleção <br>
+✅ **Resultado Detalhado**: Pontuação percentual e revisão completa <br>
+✅ **Função Reiniciar**: Permite refazer o simulado <br>
 
-Arquivos do Projeto
+#### Arquivos do Projeto
 
-• `index.html` - Estrutura HTML da aplicação
-• `styles.css` - Estilos CSS responsivos
-• `script.js` - Lógica JavaScript do simulado
-• `questions.json` - Base de dados das perguntas
-• `README.md` - Esta documentação
+  * `index.html` - Estrutura HTML da aplicação
+  * `styles.css` - Estilos CSS responsivos
+  * `script.js` - Lógica JavaScript do simulado
+  * `questions.json` - Base de dados das perguntas
+  * `README.md` - Esta documentação
 
 ## Como Executar
 
@@ -67,88 +67,38 @@ Edite o arquivo `questions.json` seguindo o formato:
 
 ```
 
-Modificar Estilos
+### Modificar Estilos
 
-•
-Cores: Edite as variáveis CSS no início do arquivo styles.css
+  * Cores: Edite as variáveis CSS no início do arquivo `styles.css`
+  * Layout: Modifique as classes CSS conforme necessário
+  * Responsividade: Ajuste as media queries no final do CSS
 
-•
-Layout: Modifique as classes CSS conforme necessário
+### Alterar Lógica
 
-•
-Responsividade: Ajuste as media queries no final do CSS
+  * Número de perguntas: Modifique a quantidade no arquivo `questions.json`
+  * istema de pontuação: Edite a função `handleNextQuestion()` no `script.js`
+  * Feedback: Customize a função `generateReview()` no `script.js`
 
-Alterar Lógica
+#### Tecnologias Utilizadas
 
-•
-Número de perguntas: Modifique a quantidade no arquivo questions.json
+  * **HTML5**: Estrutura semântica
+  * **CSS3**: Estilos modernos com gradientes e animações
+  * **JavaScript ES6+**: Lógica orientada a objetos
+  * **JSON**: Armazenamento das perguntas
 
-•
-Sistema de pontuação: Edite a função handleNextQuestion() no script.js
+#### Compatibilidade
 
-•
-Feedback: Customize a função generateReview() no script.js
+  * ✅ Chrome 60+
+  * ✅ Firefox 55+
+  * ✅ Safari 12+
+  * ✅ Edge 79+
+• ✅ Dispositivos móveis (iOS/Android)
 
-Tecnologias Utilizadas
-
-•
-HTML5: Estrutura semântica
-
-•
-CSS3: Estilos modernos com gradientes e animações
-
-•
-JavaScript ES6+: Lógica orientada a objetos
-
-•
-JSON: Armazenamento das perguntas
-
-Compatibilidade
-
-•
-✅ Chrome 60+
-
-•
-✅ Firefox 55+
-
-•
-✅ Safari 12+
-
-•
-✅ Edge 79+
-
-•
-✅ Dispositivos móveis (iOS/Android)
-
-Próximos Passos (Sugestões)
-
-
-
-
+#### Próximos Passos (Sugestões)
 Adicionar mais categorias de perguntas
-
-
-
-
-Implementar sistema de usuários
-
-
-
-
+Implementar sistema de usuarios
 Salvar histórico de resultados
-
-
-
-
 Adicionar timer por pergunta
-
-
-
-
 Criar modo de dificuldade progressiva
-
-
-
-
 Implementar ranking de pontuações
 
