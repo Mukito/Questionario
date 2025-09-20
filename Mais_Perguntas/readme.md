@@ -1,7 +1,7 @@
 #### 🎉 Sistema de Categorias Implementado com Sucesso!
 Adicionei um sistema completo de categorização de perguntas ao seu simulado! Agora os usuários podem escolher entre diferentes áreas de conhecimento.
 # ✨ Novas Funcionalidades:
-##🎯 Sistema de Categorias Completo
+## 🎯 Sistema de Categorias Completo
 * **6** categorias disponíveis**: Geografia, Arte, Ciência, História, Literatura e Esportes
 * **Seletor intuitivo** com dropdown estilizado
 * **Opção** "Todas as Categorias" para simulado misto
