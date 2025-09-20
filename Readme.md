@@ -15,6 +15,6 @@ Criei um simulado interativo completo com as seguintes características:
   * Todos os arquivos fonte (HTML, CSS, JavaScript, JSON)
 ### 🚀 Como usar:
 1. Extraia o arquivo ZIP
-2. Execute python3 -m http.server 8000 no diretório
+2. Execute `python3 -m http.server 8000` no diretório
 3. Acesse http://localhost:8000 no navegador
 
