@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Conhecimentos Gerais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simulado de Conhecimentos Gerais</h1>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="question-counter">
+                <span id="current-question">1</span> de <span id="total-questions">5</span>
+            </div>
+        </header>
+
+        <main>
+            <div id="quiz-container" class="quiz-container">
+                <div class="question-section">
+                    <h2 id="question-text">Carregando pergunta...</h2>
+                </div>
+                
+                <div class="options-section">
+                    <div class="option" id="option-0">
+                        <input type="radio" name="answer" id="answer-0" value="0">
+                        <label for="answer-0" id="label-0">Opção A</label>
+                    </div>
+                    <div class="option" id="option-1">
+                        <input type="radio" name="answer" id="answer-1" value="1">
+                        <label for="answer-1" id="label-1">Opção B</label>
+                    </div>
+                    <div class="option" id="option-2">
+                        <input type="radio" name="answer" id="answer-2" value="2">
+                        <label for="answer-2" id="label-2">Opção C</label>
+                    </div>
+                    <div class="option" id="option-3">
+                        <input type="radio" name="answer" id="answer-3" value="3">
+                        <label for="answer-3" id="label-3">Opção D</label>
+                    </div>
+                </div>
+
+                <div class="navigation-section">
+                    <button id="next-btn" class="btn btn-primary" disabled>Próxima</button>
+                </div>
+            </div>
+
+            <div id="results-container" class="results-container hidden">
+                <h2>Resultado do Simulado</h2>
+                <div class="score-section">
+                    <div class="score-circle">
+                        <span id="score-percentage">0%</span>
+                    </div>
+                    <p>Você acertou <span id="correct-answers">0</span> de <span id="total-questions-result">5</span> perguntas</p>
+                </div>
+                
+                <div class="review-section">
+                    <h3>Revisão das Respostas</h3>
+                    <div id="review-list"></div>
+                </div>
+                
+                <button id="restart-btn" class="btn btn-secondary">Refazer Simulado</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

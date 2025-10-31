@@ -1,0 +1,53 @@
+[
+  {
+    "question": "Qual é a capital do Brasil?",
+    "options": [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Brasília",
+      "Salvador"
+    ],
+    "answer": "Brasília"
+  },
+  {
+    "question": "Quem pintou a Mona Lisa?",
+    "options": [
+      "Vincent van Gogh",
+      "Leonardo da Vinci",
+      "Pablo Picasso",
+      "Claude Monet"
+    ],
+    "answer": "Leonardo da Vinci"
+  },
+  {
+    "question": "Qual é o maior oceano do mundo?",
+    "options": [
+      "Oceano Atlântico",
+      "Oceano Índico",
+      "Oceano Pacífico",
+      "Oceano Ártico"
+    ],
+    "answer": "Oceano Pacífico"
+  },
+  {
+    "question": "Quantos planetas fazem parte do nosso sistema solar?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "Qual é o elemento químico mais abundante na crosta terrestre?",
+    "options": [
+      "Ferro",
+      "Oxigênio",
+      "Silício",
+      "Alumínio"
+    ],
+    "answer": "Oxigênio"
+  }
+]
+

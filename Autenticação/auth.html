@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Simulado de Conhecimentos Gerais</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .auth-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .auth-form {
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            background: #f8f9fa;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-tab.active {
+            background: #4facfe;
+            color: white;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1>Simulado de Conhecimentos Gerais</h1>
+            <p>Faça login ou registre-se para continuar</p>
+        </div>
+        
+        <div class="auth-form">
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="showLogin()">Login</button>
+                <button class="auth-tab" onclick="showRegister()">Registrar</button>
+            </div>
+            
+            <div class="error-message" id="error-message"></div>
+            <div class="success-message" id="success-message"></div>
+            
+            <!-- Formulário de Login -->
+            <form id="login-form" style="display: block;">
+                <div class="form-group">
+                    <label for="login-username">Usuário:</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Senha:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Entrar</button>
+            </form>
+            
+            <!-- Formulário de Registro -->
+            <form id="register-form" style="display: none;">
+                <div class="form-group">
+                    <label for="register-username">Usuário:</label>
+                    <input type="text" id="register-username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password">Senha:</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+            document.querySelectorAll('.auth-tab')[0].classList.add('active');
+            document.querySelectorAll('.auth-tab')[1].classList.remove('active');
+            clearMessages();
+        }
+        
+        function showRegister() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+            document.querySelectorAll('.auth-tab')[0].classList.remove('active');
+            document.querySelectorAll('.auth-tab')[1].classList.add('active');
+            clearMessages();
+        }
+        
+        function showError(message) {
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            document.getElementById('success-message').style.display = 'none';
+        }
+        
+        function showSuccess(message) {
+            const successDiv = document.getElementById('success-message');
+            successDiv.textContent = message;
+            successDiv.style.display = 'block';
+            document.getElementById('error-message').style.display = 'none';
+        }
+        
+        function clearMessages() {
+            document.getElementById('error-message').style.display = 'none';
+            document.getElementById('success-message').style.display = 'none';
+        }
+        
+        // Login form handler
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showSuccess('Login realizado com sucesso! Redirecionando...');
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 1500);
+                } else {
+                    showError(data.error || 'Erro no login');
+                }
+            } catch (error) {
+                showError('Erro de conexão com o servidor');
+            }
+        });
+        
+        // Register form handler
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, email, password })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showSuccess('Usuário registrado com sucesso! Faça login para continuar.');
+                    setTimeout(() => {
+                        showLogin();
+                    }, 2000);
+                } else {
+                    showError(data.error || 'Erro no registro');
+                }
+            } catch (error) {
+                showError('Erro de conexão com o servidor');
+            }
+        });
+    </script>
+</body>
+</html>
+
