@@ -1,0 +1,7 @@
+# ITIL 4 - Conceitos Chave
+
+- **Foco em produtos e serviços, além de manter relações de serviço**: O valor de um produto ou serviço é definido pelo usuário e criado usando o feedback dos clientes, implementado de forma iterativa.
+- **Geração de valor para os stakeholders**: A ITIL 4 reconhece a importância de envolver todas as partes interessadas (usuários finais, TI, organizações, parceiros e fornecedores) para criar valor para todos.
+- **Criação de um sistema de prestação de serviços eficaz**: Melhoria na maneira como o sistema de entrega de valor do serviço é gerenciado, visando criar o maior valor para todas as partes envolvidas.
+- **Foco na melhoria da cadeia de valor do serviço**: A cadeia de valor do serviço é composta por diversas atividades, incluindo engajamento com as partes interessadas, planejamento e criação de uma visão para o produto/serviço, projeção focada na criação de valor, construção do serviço para fácil acesso pelos usuários finais e criação de uma rede de suporte.
+- **Utilidade e garantia**: A utilidade refere-se à funcionalidade oferecida por um produto/serviço para atender a uma necessidade específica ("o que o serviço faz" ou "adequado ao propósito"). A garantia aborda se um produto ou serviço atenderá aos requisitos acordados ("como o serviço funciona" ou "adequado para uso"), associada a níveis de serviço como capacidade, segurança, disponibilidade e continuidade.

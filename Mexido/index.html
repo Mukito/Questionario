@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Certificações - ITIL 4, PMP e Scrum Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>CertPrep</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard">Dashboard</a></li>
+                    <li><a href="#itil4" class="nav-link" data-section="itil4">ITIL 4</a></li>
+                    <li><a href="#pmp" class="nav-link" data-section="pmp">PMP</a></li>
+                    <li><a href="#scrum" class="nav-link" data-section="scrum">Scrum Master</a></li>
+                    <li><a href="#diary" class="nav-link" data-section="diary">Diário</a></li>
+                    <li><a href="#strategies" class="nav-link" data-section="strategies">Estratégias</a></li>
+                    <li><a href="#connections" class="nav-link" data-section="connections">Conexões</a></li>
+                    <li><a href="#plan" class="nav-link" data-section="plan">Plano</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="container">
+                <h2>Dashboard</h2>
+                <div class="dashboard-grid">
+                    <!-- Progress Overview -->
+                    <div class="card progress-overview">
+                        <h3><i class="fas fa-chart-line"></i> Visão Geral do Progresso</h3>
+                        <div class="progress-cards">
+                            <div class="progress-card itil4">
+                                <div class="progress-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="progress-info">
+                                    <h4>ITIL 4</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-progress="0"></div>
+                                    </div>
+                                    <span class="progress-text">0% Completo</span>
+                                </div>
+                            </div>
+                            <div class="progress-card pmp">
+                                <div class="progress-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="progress-info">
+                                    <h4>PMP</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-progress="0"></div>
+                                    </div>
+                                    <span class="progress-text">0% Completo</span>
+                                </div>
+                            </div>
+                            <div class="progress-card scrum">
+                                <div class="progress-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="progress-info">
+                                    <h4>Scrum Master</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-progress="0"></div>
+                                    </div>
+                                    <span class="progress-text">0% Completo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Immediate Actions -->
+                    <div class="card immediate-actions">
+                        <h3><i class="fas fa-bolt"></i> Ações Imediatas</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn study" data-action="study">
+                                <i class="fas fa-book"></i>
+                                <span>Estude</span>
+                                <small>Conceitos + Frameworks</small>
+                            </button>
+                            <button class="action-btn practice" data-action="practice">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Pratique</span>
+                                <small>Simulados/Questões</small>
+                            </button>
+                            <button class="action-btn analyze" data-action="analyze">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analise</span>
+                                <small>Diário de estudos</small>
+                            </button>
+                            <button class="action-btn adjust" data-action="adjust">
+                                <i class="fas fa-cog"></i>
+                                <span>Ajuste</span>
+                                <small>Estratégia + Foco</small>
+                            </button>
+                            <button class="action-btn connect" data-action="connect">
+                                <i class="fas fa-link"></i>
+                                <span>Conecte-se</span>
+                                <small>Comunidades</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Study Stats -->
+                    <div class="card study-stats">
+                        <h3><i class="fas fa-clock"></i> Estatísticas de Estudo</h3>
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <div class="stat-value" id="total-study-time">0h</div>
+                                <div class="stat-label">Tempo Total</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value" id="study-streak">0</div>
+                                <div class="stat-label">Dias Consecutivos</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value" id="questions-answered">0</div>
+                                <div class="stat-label">Questões Respondidas</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value" id="average-score">0%</div>
+                                <div class="stat-label">Média de Acertos</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card recent-activity">
+                        <h3><i class="fas fa-history"></i> Atividade Recente</h3>
+                        <div class="activity-list" id="recent-activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Bem-vindo à plataforma de certificações!</p>
+                                    <small>Comece explorando os módulos de estudo.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITIL 4 Section -->
+        <section id="itil4" class="section">
+            <div class="container">
+                <h2><i class="fas fa-cogs"></i> ITIL 4</h2>
+                <div class="certification-nav">
+                    <button class="cert-nav-btn active" data-subsection="concepts">Conceitos</button>
+                    <button class="cert-nav-btn" data-subsection="checklist">Checklist</button>
+                    <button class="cert-nav-btn" data-subsection="practice">Prática</button>
+                    <button class="cert-nav-btn" data-subsection="examples">Exemplos</button>
+                </div>
+                <div class="certification-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PMP Section -->
+        <section id="pmp" class="section">
+            <div class="container">
+                <h2><i class="fas fa-project-diagram"></i> PMP</h2>
+                <div class="certification-nav">
+                    <button class="cert-nav-btn active" data-subsection="concepts">Conceitos</button>
+                    <button class="cert-nav-btn" data-subsection="checklist">Checklist</button>
+                    <button class="cert-nav-btn" data-subsection="practice">Prática</button>
+                    <button class="cert-nav-btn" data-subsection="examples">Exemplos</button>
+                </div>
+                <div class="certification-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrum Master Section -->
+        <section id="scrum" class="section">
+            <div class="container">
+                <h2><i class="fas fa-users"></i> Scrum Master</h2>
+                <div class="certification-nav">
+                    <button class="cert-nav-btn active" data-subsection="concepts">Conceitos</button>
+                    <button class="cert-nav-btn" data-subsection="checklist">Checklist</button>
+                    <button class="cert-nav-btn" data-subsection="practice">Prática</button>
+                    <button class="cert-nav-btn" data-subsection="examples">Exemplos</button>
+                </div>
+                <div class="certification-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Diary Section -->
+        <section id="diary" class="section">
+            <div class="container">
+                <h2><i class="fas fa-book-open"></i> Diário de Estudos</h2>
+                <div class="diary-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategies Section -->
+        <section id="strategies" class="section">
+            <div class="container">
+                <h2><i class="fas fa-lightbulb"></i> Estratégias de Estudo</h2>
+                <div class="strategies-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Connections Section -->
+        <section id="connections" class="section">
+            <div class="container">
+                <h2><i class="fas fa-network-wired"></i> Conexões entre Certificações</h2>
+                <div class="connections-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Plan Section -->
+        <section id="plan" class="section">
+            <div class="container">
+                <h2><i class="fas fa-calendar-alt"></i> Plano de Estudos</h2>
+                <div class="plan-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CertPrep - Plataforma de Certificações. Desenvolvido para auxiliar na preparação para ITIL 4, PMP e Scrum Master.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="certification-content.js"></script>
+    <script src="questions-system.js"></script>
+    <script src="diary-system.js"></script>
+    <script src="strategies-connections.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
